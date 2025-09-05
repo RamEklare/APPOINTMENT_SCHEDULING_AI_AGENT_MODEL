@@ -8,11 +8,9 @@ DOCTOR_XLSX = os.path.join(DATA_DIR, "doctor_schedules_sample.xlsx")
 BOOKINGS_XLSX = os.path.join(DATA_DIR, "bookings.xlsx")
 
 def load_patients(path: str = PATIENT_CSV):
-    """Load patient CSV"""
     return pd.read_csv(path)
 
 def load_doctors_and_availability(path: str = DOCTOR_XLSX):
-    """Load doctors and availability from Excel"""
     xls = pd.ExcelFile(path, engine='openpyxl')
     doctors = pd.read_excel(xls, "doctors")
     availability = pd.read_excel(xls, "availability")
@@ -21,7 +19,6 @@ def load_doctors_and_availability(path: str = DOCTOR_XLSX):
     return doctors, availability, holidays
 
 def search_patient(patients_df: pd.DataFrame, name: str, dob: str):
-    """Lookup patient by name + DOB"""
     name = name.strip().lower()
     parts = name.split()
     matches = patients_df[
@@ -38,7 +35,6 @@ def search_patient(patients_df: pd.DataFrame, name: str, dob: str):
         return matches.iloc[0].to_dict()
 
 def get_available_slots(availability_df, doctor_id, date_str):
-    """Return available slots for a doctor on a given date"""
     day_slots = availability_df[
         (availability_df["doctor_id"] == doctor_id) &
         (availability_df["date"] == date_str) &
