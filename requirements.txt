@@ -5,3 +5,6 @@ langchain
 huggingface-hub
 transformers
 sentence-transformers
+torch
+pydantic
+pydantic-core
