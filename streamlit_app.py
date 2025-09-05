@@ -9,7 +9,7 @@ st.title("Appointment Scheduling AI Agent")
 # -----------------------------
 # Load HuggingFace LLM
 # -----------------------------
-hf_token = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+hf_token = st.secrets["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"]
 
 llm = HuggingFaceHub(
     repo_id="google/flan-t5-small",
