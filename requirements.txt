@@ -1,7 +1,9 @@
-streamlit
-pandas
-openpyxl
-langchain
-langchain-community
-transformers
-huggingface-hub
+streamlit==1.32.0 
+pandas==2.3.2 
+langchain==0.3.27 
+langchain-community==0.3.29 
+transformers==4.56.1 
+torch==2.8.0 
+pydantic==2.11.7 
+pydantic-core==2.33.2 
+requests==2.32.5 
